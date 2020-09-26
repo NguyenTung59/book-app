@@ -1,0 +1,29 @@
+extends ../layouts/common
+
+block content
+	.container-book.p-4
+		if errors
+			each error in errors
+				.alert.alert-danger= error
+
+		if success
+			each succes in success
+				.alert.alert-success.auto-hide= succes
+
+
+		form.form-group.m-auto(method="POST" enctype="multipart/form-data")
+			label(for="name") Name
+			input#name.input-group.form-control.mb-3(name="name" type="name", required)
+
+			label(for="author") Author
+			input#author.input-group.form-control.mb-3(name="author" type="text", required)
+
+			label(for="isbn") ISBN
+			input#isbn.input-group.form-control.mb-3(name="isbn", type="text", required)
+
+			label(for="image") Image
+			input#image.mb-3(name="image", type="file", required)
+
+
+			button.btn.btn-primary.btn-outline-primarys Create
+

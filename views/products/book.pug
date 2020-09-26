@@ -1,0 +1,14 @@
+extends ../layouts/common
+
+block content
+	.container-book.d-flex.justify-content-center.p-0.mt-4
+		.col-12.col-md-6.col-lg-6.align-center.book
+			if book
+				.card.book-img
+					img(src= book.image)
+				.card-title= book.name
+				.card-author Author:
+					span= book.author
+				.card-genre Genre:
+					span Universe
+				.card-content Exceptional full-color photographs representing the latest captures from space telescopes and detailed digital artwork enhance a comprehensive study of the world of outer space, from Earth is closest neighbors in the solar system to the farthest galaxies, documenting the planets, their moons, stars, galaxies, supernovas, and other celestial phenomena. Reprint.

@@ -1,0 +1,7 @@
+extends ../layouts/common
+
+block content
+	.container.center
+		each user in users
+			tr
+				td= user.name

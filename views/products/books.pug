@@ -1,0 +1,47 @@
+extends ../layouts/common
+
+block content
+	.container-book.d-grid.section
+		h2 The Universe Book
+		.data-book.m-0
+			each book in books
+				.card-book
+					.card-content
+						a.book-img(href='/' + book.name)
+							.card.card-img
+								img(src= book.image)
+						.book-content
+							.card-title= book.name
+							.card-subtitle= book.author
+							.card-vote <3
+							.card-description Today is a nice day!! about you? It is cloudly. Today is a nice day!! about you? It is cloudly.
+						.card-t-border
+							a.btn.detail-book-link detail
+						.card-view 999.999 views
+						
+		.row.m-0.row-pagination.height-40
+			nav.pagination-absolute(aria-label='Page navigation example')
+				ul.pagination
+					li.page-item
+						if page == 1
+							a.page-link(href='/home', aria-label='Previous')
+								span(aria-hidden='true') &laquo;
+								span.sr-only Previous
+						else
+							a.page-link(href='/home?page=' + pre, aria-label='Previous')
+								span(aria-hidden='true') &laquo;
+								span.sr-only Previous
+					li.page-item
+						a.page-link(href='/home?page=1') 1
+					li.page-item
+						a.page-link(href='/home?page=2') 2
+					li.page-item
+						a.page-link(href='/home?page=3') 3
+					li.page-item
+						a.page-link(href='/home?page=' + next, aria-label='Next')
+							span(aria-hidden='true') &raquo;
+							span.sr-only Next
+
+
+	
+
